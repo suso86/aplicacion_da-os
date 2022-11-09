@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container text-center">
+    <article class="main row">
+        <p class="border text-center">En la actualidad, existe un gran interés por la conservación digital 
+          del Patrimonio Cultural. Gracias al desarrollo de las tecnologías de la información 
+          y la comunicación, su adopción en campos como la Restauración y Conservación de Bienes 
+          Culturales está ayudando a preservar el patrimonio. En este sentido, en la fase más temprana 
+          en proyectos de restauración e intervención, es la generación de un mapa de daños (también conocido 
+          como mapa de patologías), con el cual se puede conocer el estado actual de conservación de una obra 
+          artística para, así, poder planificar su posterior intervención. 
+        </p>
+        <p>
+          Esta aplicación servirá para la detección de daños en pinturas de caballete,
+          donde la persona que la utilice introducirá una imágen de un cuadro con daños y
+          se le detectará esos daños.
+        </p>
+    </article>
+    <img src="{{ url_for('static', filename='./images/introduccion.jpg')}}" width = "700" height ="400"/>
+    <div clas="row">
+      <button type="button" class="btn btn-primary "><a href="{{ url_for('SubirImagen') }}">Continuar</a></button>
+    </div>
+</div>
+
+<style>
+ 
+</style>
+{% endblock %}

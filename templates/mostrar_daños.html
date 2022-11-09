@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block body %}
+<section class="jumbotron text-center">
+    <h2>Cuadro: {{name_file}}</h2>
+</section>
+
+<div class="container">
+  <div class="main row">
+    <div class="col-md-5">
+      <h3>Imagen original </h3>
+      <img src="{{ url_for('static', filename='./images/test.jpg')}}" width = "400" height = "auto"/>
+    </div>
+
+    <div class="col-md-5">
+      <h3>Daños detectados</h3>
+      <img src="{{ url_for('static', filename='./images/deteccion.jpg')}}" width = "400" height = "auto"/>
+      <form action="{{ url_for('DownloadImages') }}" method="GET">
+        <input type="submit" value="Descargar imágen"/>
+      </form>
+    </div>
+
+    <div class="col-md-2">
+      <h3>Características</h3>
+      <p>Caracteristicas respecto los daños que se han detectado</p>
+      <ul>
+        <li>Tamaño de la imagen: {{tamaño}}</li>
+        <li>Cantidad de zona no dañada: {{zona_no_dañada}}</li>
+        <li>Cantidad de zona dañada: {{zona_dañada}}</li>
+        <li>Porcentaje que presenta de daños: {{porcentaje}}%</li>
+      </ul>
+    </div>
+
+  </div>
+  <a href="{{ url_for('SubirImagen') }}">Volver a cargar nueva imágen</a>
+</div>
+
+{% endblock %}
