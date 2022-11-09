@@ -236,8 +236,7 @@ def guardarImagen_ObtenerCaracteristicas(nombre_img):
     results = model.detect([img_arr], verbose=1)
     r = results[0]
 
-    poligonos = display_instances(img, r['rois'], r['masks'], r['class_ids'],dataset_train.class_names, 
-                                r['scores'], title="Predicción")
+    poligonos = display_instances(img, r['rois'], r['masks'], r['class_ids'],dataset_train.class_names)
     
     suma_areas = SumAreas(poligonos)
 
